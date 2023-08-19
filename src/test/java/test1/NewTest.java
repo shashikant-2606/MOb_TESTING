@@ -3,9 +3,7 @@ package test1;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
 
 import io.appium.java_client.android.AndroidDriver;
@@ -35,7 +33,7 @@ public class NewTest {
 	  URL url = null;
 	try 
 	{
-		url = new URL("http://localhost:4723/wd/hub");
+		url = new URL("http://127.0.0.1:4723/wd/hub");
 	}
 	catch (MalformedURLException e) 
 	{
@@ -43,7 +41,7 @@ public class NewTest {
 		e.printStackTrace();
 	}
 	  
-      WebDriver  driver= new RemoteWebDriver(url,caps);
+      AndroidDriver  driver= new AndroidDriver(url,caps);
       
       driver.get("https://www.villeos.com/");
   }
