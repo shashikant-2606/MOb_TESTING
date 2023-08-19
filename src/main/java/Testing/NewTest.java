@@ -10,7 +10,8 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.remote.MobilePlatform;
 
-public class NewTest {
+public class NewTest 
+{
 	@Test
 	  public void f() 
 	  {
@@ -24,9 +25,7 @@ public class NewTest {
 			  
 			  caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
 			  
-			  caps.setCapability(MobileCapabilityType.BROWSER_NAME, "chrome");
-			  
-			  
+			  caps.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
 			  
 			  //Establishing the connection with appium server
 			  

@@ -11,6 +11,14 @@
   </properties>
   
   <dependencies>
+	  
+	  
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
     
     <!-- https://mvnrepository.com/artifact/io.appium/java-client -->
 <dependency>
@@ -85,7 +93,7 @@
         <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
-          <version>3.3.1</version>
+          <version>3.0.1</version>
         </plugin>
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
