@@ -5,6 +5,7 @@ pool:
   vmImage: 'macOS-latest'
 
 jobs:
+- job: test
 
 
   steps:
