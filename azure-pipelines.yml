@@ -33,8 +33,6 @@ jobs:
     matrix:
       REMOTE_SERVER:
         isRemote: true
-      LOCAL_SERVER:
-        isRemote: false
 
   variables:
     ANDROID_EMU_NAME: test
