@@ -40,7 +40,7 @@ public class NewTest {
 	  URL url = null;
 	try 
 	{
-		url = new URL("http://192.168.1.50:4723/wd/hub");
+		url = new URL("http://127.0.0.1:4723/wd/hub/");
 	}
 	catch (MalformedURLException e) 
 	{
