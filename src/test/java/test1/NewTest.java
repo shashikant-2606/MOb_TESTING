@@ -27,7 +27,7 @@ public class NewTest {
 	  
 	 caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "12");
 	  
-	  caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
+	  //caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
 	  
 	  caps.setCapability(MobileCapabilityType.BROWSER_NAME, "chrome");
 	  
@@ -40,7 +40,7 @@ public class NewTest {
 	  URL url = null;
 	try 
 	{
-		url = new URL("http://127.0.0.1:4723/wd/hub");
+		url = new URL("http://127.0.0.1:4723/wd/hub/");
 	}
 	catch (MalformedURLException e) 
 	{
