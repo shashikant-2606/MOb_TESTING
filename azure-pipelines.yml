@@ -1,10 +1,29 @@
 trigger:
   - master
+
 pool:
   vmImage: 'macOS-latest'
 
-jobs:
 
+
+  steps:
+
+
+    - task: Maven@3
+      displayName: 'Compile project'
+      inputs:
+        mavenPomFile: 'pom.xml'
+        goals: 'clean compile'
+        publishJUnitResults: true
+        testResultsFiles: '**/surefire-reports/TEST-*.xml'
+        javaHomeOption: 'JDKVersion'
+        mavenVersionOption: 'Default'
+        mavenAuthenticateFeed: false
+        effectivePomSkip: false
+        sonarQubeRunAnalysis: false
+      continueOnError: true
+
+jobs:
 - job: tests
   displayName: Run tests
   strategy:
@@ -83,7 +102,6 @@ jobs:
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
         javaHomeOption: 'JDKVersion'
-        jdkVersionOption: '1.11'
         mavenVersionOption: 'Default'
         mavenAuthenticateFeed: false
         effectivePomSkip: false
