@@ -23,11 +23,11 @@ public class NewTest {
 	  
 	  caps.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.ANDROID);
 	  
-	  //caps.setCapability(MobileCapabilityType.DEVICE_NAME, "MZIBVKPRAMCMK7GM");
+	  caps.setCapability(MobileCapabilityType.DEVICE_NAME, "MZIBVKPRAMCMK7GM");
 	  
-	 // caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "12");
+	 caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "12");
 	  
-	  //caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
+	  caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
 	  
 	  caps.setCapability(MobileCapabilityType.BROWSER_NAME, "chrome");
 	  
