@@ -5,26 +5,9 @@ pool:
   vmImage: 'macOS-latest'
 
 jobs:
-- job: test
 
 
-  steps:
- 
 
-    - task: Maven@3
-      displayName: 'Compile project'
-      inputs:
-        mavenPomFile: 'pom.xml'
-        goals: 'clean compile'
-        publishJUnitResults: true
-        testResultsFiles: '**/surefire-reports/TEST-*.xml'
-        javaHomeOption: 'JDKVersion'
-        jdkVersionOption: '1.11'
-        mavenVersionOption: 'Default'
-        mavenAuthenticateFeed: false
-        effectivePomSkip: false
-        sonarQubeRunAnalysis: false
-      continueOnError: true
 
 
 - job: tests
