@@ -27,7 +27,7 @@ public class NewTest {
 	  
 	 //caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "12");
 	  
-	  //caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
+	  caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
 	  
 	  caps.setCapability(MobileCapabilityType.BROWSER_NAME, "chrome");
 	  
