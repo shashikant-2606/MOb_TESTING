@@ -4,12 +4,10 @@ trigger:
 pool:
   vmImage: 'macOS-latest'
 
-jobs:
-- job: test
 
 
   steps:
- 
+
 
     - task: Maven@3
       displayName: 'Compile project'
@@ -26,7 +24,7 @@ jobs:
         sonarQubeRunAnalysis: false
       continueOnError: true
 
-
+jobs:
 - job: tests
   displayName: Run tests
   strategy:
