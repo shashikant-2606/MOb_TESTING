@@ -1,0 +1,51 @@
+# Maven
+# Build your Java project and run tests with Apache Maven.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/java
+
+
+trigger:
+  - main
+
+stages:
+  - 
+pool:
+  vmImage: 'macOS-latest'
+  jobs:
+  -job:
+
+  steps:
+  
+      - task: NodeTool@0
+        inputs:
+         versionSpec: "18.12.1"
+        script:| 
+                SIMULATOR_NAME="my-sim"
+                 SIMULATOR_UDID=`xcrun simctl create "$SIMULATOR_NAME"
+                 com.apple.CoreSimulator.SimDeviceType.iPhone-12 
+                 com.apple.CoreSimulator.SimRuntime.iOS-14-3`
+                 xcrun simctl boot $SIMULATOR_UDID
+
+        script:|
+          node -v
+          java -version
+          npm install -g appium@next
+          appium -v
+          appium driver install xcuitest
+          appium plugin install --source npm appium-device-farm
+stages
+          pool:
+      vmImage: 'macOS-latest'
+    steps:
+    -job:
+
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx3072m'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.11'
+    jdkArchitectureOption: 'x64'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    goals: 'package'
