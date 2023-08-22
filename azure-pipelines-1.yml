@@ -26,6 +26,9 @@ stages:
               appium driver install xcuitest
               appium plugin install --source npm appium-device-farm
 
+- job: tests
+  displayName: Run tests
+  steps:
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
