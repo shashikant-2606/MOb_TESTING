@@ -10,7 +10,7 @@ stages:
       - job: test
         steps:
           - task: CmdLine@2
-            inputs
+            inputs:
                         
             -script:| 
               SIMULATOR_NAME="my-sim"
