@@ -10,8 +10,9 @@ stages:
       - job: test
         steps:
           - task: CmdLine@2
-            inputs:
-                        
+          
+            inputs
+            
             -script:| 
               SIMULATOR_NAME="my-sim"
               SIMULATOR_UDID=`xcrun simctl create "$SIMULATOR_NAME"
@@ -25,8 +26,9 @@ stages:
               appium -v
               appium driver install xcuitest
               appium plugin install --source npm appium-device-farm
-              
+
           - task: Maven@4
+            displayName: 'Run tests'
             inputs:
               mavenPomFile: 'pom.xml'
               publishJUnitResults: true
