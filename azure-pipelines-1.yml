@@ -25,19 +25,16 @@ stages:
               appium -v
               appium driver install xcuitest
               appium plugin install --source npm appium-device-farm
-
-- job: tests
-  displayName: Run tests
-  steps:
-- task: Maven@4
-  inputs:
-    mavenPomFile: 'pom.xml'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.11'
-    mavenVersionOption: 'Default'
-    mavenAuthenticateFeed: true
-    effectivePomSkip: true
-    sonarQubeRunAnalysis: true
-    sqMavenPluginVersionChoice: 'latest'
+              
+          - task: Maven@4
+            inputs:
+              mavenPomFile: 'pom.xml'
+              publishJUnitResults: true
+              testResultsFiles: '**/surefire-reports/TEST-*.xml'
+              javaHomeOption: 'JDKVersion'
+              jdkVersionOption: '1.11'
+              mavenVersionOption: 'Default'
+              mavenAuthenticateFeed: true
+              effectivePomSkip: true
+              sonarQubeRunAnalysis: true
+              sqMavenPluginVersionChoice: 'latest'
