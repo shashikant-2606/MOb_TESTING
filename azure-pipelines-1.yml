@@ -5,45 +5,39 @@ pool:
   vmImage: 'macOS-latest'
 
 stages:
+  - stage: emulator
     jobs:
       - job: test
         steps:
           - task: NodeTool@0
-            inputs
-            versionSource: 'spec'
-            versionSpec: '17.5.0'
-            
-            - task: JavaToolInstaller@0
-                inputs
-                 versionSpec: '11'
-                 jdkArchitectureOption: 'x64'
-                 jdkSourceOption: 'PreInstalled'
-            
-            - script:| 
+            inputs:
+              versionSource: 'spec'
+              versionSpec: '17.5.0'
+
+          - task: JavaToolInstaller@0
+            inputs:
+              versionSpec: '11'
+              jdkArchitectureOption: 'x64'
+              jdkSourceOption: 'PreInstalled'
+
+          - script: |
               node -v
-              java -v
+              java -version
               npm install -g appium@next
               appium -v
               appium driver install xcuitest
               appium plugin install --source npm appium-device-farm
-              
+
               SIMULATOR_NAME="my-sim"
-              SIMULATOR_UDID=`xcrun simctl create "$SIMULATOR_NAME"
-              com.apple.CoreSimulator.SimDeviceType.iPhone-12 
-              com.apple.CoreSimulator.SimRuntime.iOS-14-3`
+              SIMULATOR_UDID=`xcrun simctl create "$SIMULATOR_NAME" com.apple.CoreSimulator.SimDeviceType.iPhone-12 com.apple.CoreSimulator.SimRuntime.iOS-14-3`
               xcrun simctl boot $SIMULATOR_UDID
 
-pool:
-  vmImage: 'macOS-latest'
-
-  - stages: emulator
+  - stage: BuildAndTest
     jobs:
-      - job: test
+      - job: test1
         steps:
-              
-
-            - task: Maven@3
-              inputs
+          - task: Maven@3
+            inputs:
               mavenPomFile: 'pom.xml'
               publishJUnitResults: true
               testResultsFiles: '**/surefire-reports/TEST-*.xml'
