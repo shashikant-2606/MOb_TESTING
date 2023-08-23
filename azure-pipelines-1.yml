@@ -21,9 +21,6 @@ stages:
               jdkSourceOption: 'PreInstalled'
 
           - script: |
-              export SIMULATOR_NAME="my-sim"
-              export SIMULATOR_UDID=`xcrun simctl create "$SIMULATOR_NAME" com.apple.CoreSimulator.SimDeviceType.iPhone-12 com.apple.CoreSimulator.SimRuntime.iOS-14-3`
-              export xcrun simctl boot $SIMULATOR_UDID
 
               node -v
               java -version
@@ -33,10 +30,7 @@ stages:
               appium plugin install --source npm appium-device-farm
 
               
-  - stage: BuildAndTest
-    jobs:
-      - job: test1
-        steps:
+  
           - task: Maven@3
             inputs:
               mavenPomFile: 'pom.xml'
