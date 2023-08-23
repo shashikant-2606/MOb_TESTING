@@ -21,6 +21,10 @@ stages:
               jdkSourceOption: 'PreInstalled'
 
           - script: |
+              export SIMULATOR_NAME="my-sim"
+              export SIMULATOR_UDID=`xcrun simctl create "$SIMULATOR_NAME" com.apple.CoreSimulator.SimDeviceType.iPhone-12 com.apple.CoreSimulator.SimRuntime.iOS-14-3`
+              export xcrun simctl boot $SIMULATOR_UDID
+
               node -v
               java -version
               npm install -g appium@next
@@ -28,10 +32,7 @@ stages:
               appium driver install xcuitest
               appium plugin install --source npm appium-device-farm
 
-              SIMULATOR_NAME="my-sim"
-              SIMULATOR_UDID=`xcrun simctl create "$SIMULATOR_NAME" com.apple.CoreSimulator.SimDeviceType.iPhone-12 com.apple.CoreSimulator.SimRuntime.iOS-14-3`
-              xcrun simctl boot $SIMULATOR_UDID
-
+              
   - stage: BuildAndTest
     jobs:
       - job: test1
