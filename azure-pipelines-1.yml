@@ -19,13 +19,11 @@ stages:
         jdkArchitectureOption: 'x64'
             -script:| 
               node -v
-              java -version
+              java -v
               npm install -g appium@next
               appium -v
               appium driver install xcuitest
               appium plugin install --source npm appium-device-farm
-
-            -script:|
               SIMULATOR_NAME="my-sim"
               SIMULATOR_UDID=`xcrun simctl create "$SIMULATOR_NAME"
               com.apple.CoreSimulator.SimDeviceType.iPhone-12 
