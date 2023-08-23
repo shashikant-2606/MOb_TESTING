@@ -9,17 +9,15 @@ stages:
     jobs:
       - job: test
         steps:
-          - task: CmdLine@2
-          
-            inputs
-            
+          - task: NodeTool@0
+          inputs:
+        versionSpec: "18.12.1"
+        displayName: 'Install Node.js'
+        - task: UseJavaVersion@0
+        inputs:
+        versionSpec: '11'
+        jdkArchitectureOption: 'x64'
             -script:| 
-              SIMULATOR_NAME="my-sim"
-              SIMULATOR_UDID=`xcrun simctl create "$SIMULATOR_NAME"
-              com.apple.CoreSimulator.SimDeviceType.iPhone-12 
-              com.apple.CoreSimulator.SimRuntime.iOS-14-3`
-              xcrun simctl boot $SIMULATOR_UDID
-        
               node -v
               java -version
               npm install -g appium@next
@@ -27,8 +25,15 @@ stages:
               appium driver install xcuitest
               appium plugin install --source npm appium-device-farm
 
+            -script:|
+              SIMULATOR_NAME="my-sim"
+              SIMULATOR_UDID=`xcrun simctl create "$SIMULATOR_NAME"
+              com.apple.CoreSimulator.SimDeviceType.iPhone-12 
+              com.apple.CoreSimulator.SimRuntime.iOS-14-3`
+              xcrun simctl boot $SIMULATOR_UDID
+
           - task: Maven@4
-            displayName: 'Run tests'
+          
             inputs:
               mavenPomFile: 'pom.xml'
               publishJUnitResults: true
