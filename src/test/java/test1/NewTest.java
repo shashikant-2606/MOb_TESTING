@@ -17,8 +17,6 @@ public class NewTest
 {
 	 AndroidDriver driver;
 	
-	
-	@Parameters("browser")
   @BeforeTest
   public void setup(String browser) 
   {
