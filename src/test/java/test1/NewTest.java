@@ -18,7 +18,7 @@ public class NewTest
 	 AndroidDriver driver;
 	
   @BeforeTest
-  public void setup(String browser) 
+  public void setup() 
   {
 		  DesiredCapabilities caps= new DesiredCapabilities();
 	      caps.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.ANDROID);
