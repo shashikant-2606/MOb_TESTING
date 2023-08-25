@@ -23,9 +23,9 @@ public class NewTest
 		  DesiredCapabilities caps= new DesiredCapabilities();
 	      caps.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.ANDROID);
 	  
-	  //caps.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554");
+	      //caps.setCapability(MobileCapabilityType.DEVICE_NAME, "MZIBVKPRAMCMK7GM");
 	  
-	 //caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "12");
+	      //caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "12");
 	  
 	      caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
 	  

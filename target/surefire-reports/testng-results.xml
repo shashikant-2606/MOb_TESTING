@@ -2,16 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-08-19T09:43:45 IST" name="Suite" finished-at="2023-08-19T09:44:11 IST" duration-ms="26327">
+  <suite started-at="2023-08-25T17:43:52 IST" name="Suite" finished-at="2023-08-25T17:44:46 IST" duration-ms="53418">
     <groups>
     </groups>
-    <test started-at="2023-08-19T09:43:45 IST" name="Test" finished-at="2023-08-19T09:44:11 IST" duration-ms="26327">
-      <class name="test1.NewTest">
-        <test-method signature="f()[pri:0, instance:test1.NewTest@2dc54ad4]" started-at="2023-08-19T09:43:45 IST" name="f" finished-at="2023-08-19T09:44:11 IST" duration-ms="26240" status="PASS">
+    <test started-at="2023-08-25T17:43:52 IST" name="ChromeTest" finished-at="2023-08-25T17:44:46 IST" duration-ms="53418">
+      <class name="test1.NewTest1">
+        <test-method is-config="true" signature="setup()[pri:0, instance:test1.NewTest1@13e344d]" started-at="2023-08-25T17:43:52 IST" name="setup" finished-at="2023-08-25T17:44:38 IST" duration-ms="45675" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- f -->
-      </class> <!-- test1.NewTest -->
-    </test> <!-- Test -->
+        </test-method> <!-- setup -->
+        <test-method signature="urlcheck()[pri:0, instance:test1.NewTest1@13e344d]" started-at="2023-08-25T17:44:38 IST" name="urlcheck" finished-at="2023-08-25T17:44:46 IST" duration-ms="7644" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- urlcheck -->
+      </class> <!-- test1.NewTest1 -->
+    </test> <!-- ChromeTest -->
   </suite> <!-- Suite -->
 </testng-results>
