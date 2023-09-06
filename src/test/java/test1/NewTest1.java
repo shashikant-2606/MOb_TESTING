@@ -43,6 +43,8 @@ public class NewTest1 extends NewTest
       String password1="Testing@12345";
       Thread.sleep(5000);
       
+      driver.get("https://playground.mailslurp.com");
+      
       driver.findElement(By.cssSelector("[data-test=sign-in-create-account-link]")).click();
       
       Thread.sleep(5000);
