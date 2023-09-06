@@ -58,6 +58,12 @@
     <scope>test</scope>
 </dependency>
 
+<dependency>
+    <groupId>com.mailslurp</groupId>
+    <artifactId>mailslurp-client-java</artifactId>
+    <version>15.17.4</version>
+</dependency>
+
 <!-- https://mvnrepository.com/artifact/com.sun.mail/jakarta.mail -->
 <dependency>
     <groupId>com.sun.mail</groupId>
